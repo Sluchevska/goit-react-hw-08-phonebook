@@ -1,12 +1,17 @@
-const BASE_URL = 'http://localhost:3000';
+import axios from 'axios'
+axios.defaults.BASE_URL = 'http://localhost:3000';
 
-async function fetchWithErrorHandling(url = '', config = {}) {
-    const response = await fetchWithErrorHandling(url, config)
-    return response.ok
-        ? await response.json()
-        :Promise.reject(new Error('Not found'))
+export async function fetchContacts() {
+    const { data } = await axios.get(`/contacts`)
+    return data
 }
 
-export function fetchContacts(){
-return fetchWithErrorHandling(`${BASE_URL}/contacts`)
+export async function addContact(contact) {
+const { data } = await axios.post(`/contacts`, contact);
+  return data;
+}
+
+export async function deleteContact(id) {
+  await axios.delete(`/contacts/${id}`);
+  return id;
 }
