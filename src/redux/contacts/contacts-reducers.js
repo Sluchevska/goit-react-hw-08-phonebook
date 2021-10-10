@@ -16,7 +16,8 @@ const isLoading = createReducer(false, {
 })
 
 const error = createReducer(null, {
-  [contactsActions.fetchContactsError]:(_, action)=> action.payload
+  [contactsActions.fetchContactsError]: (_, action) => action.payload,
+  [contactsActions.fetchContactsRequest]:()=> null
 })
 
 const filter = createReducer("", {
