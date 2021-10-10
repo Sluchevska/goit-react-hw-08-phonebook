@@ -1,4 +1,5 @@
 import { contactsActions } from "."
+
 import * as contactsApi from 'services/contacts-api'
 
 export const fetchContacts = () => async dispatch => {
@@ -10,6 +11,7 @@ export const fetchContacts = () => async dispatch => {
        dispatch(contactsActions.fetchContactsError(error))
    }
 }
+
 
 // export const addContacts = () => async dispatch => {
 //     dispatch(contactsActions.fetchContactsRequest())

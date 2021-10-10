@@ -17,9 +17,8 @@ function ContactList() {
   const dispatch = useDispatch();
 
   const contacts = useSelector(getVisibleContacts.getVisibleContacts);
-  useEffect(() => {
-    dispatch(contactsOperations.fetchContacts());
-  }, [dispatch]);
+  useEffect(() => dispatch(contactsOperations.fetchContacts()), [dispatch]);
+  
   return (
     <ContainerItems>
       {contacts.map(({ id, name, number }) => (
