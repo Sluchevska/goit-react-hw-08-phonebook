@@ -1,13 +1,13 @@
-import { useDispatch, useSelector } from 'react-redux';
-import contactsActions from '../../redux/contacts-actions';
-import { getVisibleContacts } from '../../redux/contacts-selectors';
+import { useDispatch, useSelector } from "react-redux";
+import contactsActions from "../../redux/contacts-actions";
+import { getVisibleContacts } from "../../redux/contacts-selectors";
 
 import {
   Span,
   Button,
   ContactItems,
   ContainerItems,
-} from './ContactList.styled';
+} from "./ContactList.styled";
 
 function ContactList() {
   const dispatch = useDispatch();
