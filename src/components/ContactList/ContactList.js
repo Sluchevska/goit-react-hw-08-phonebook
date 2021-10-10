@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import {contactsActions, getVisibleContacts} from "../../redux/contacts";
+import {contactsActions, getVisibleContacts} from "redux/contacts";
 
 
 import {
