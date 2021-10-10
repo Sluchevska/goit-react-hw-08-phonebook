@@ -1,8 +1,10 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { contactsActions, getVisibleContacts, contactsOperations } from "redux/contacts";
-
-
+import {
+  contactsActions,
+  getVisibleContacts,
+  contactsOperations,
+} from "redux/contacts";
 
 import {
   Span,
@@ -16,8 +18,8 @@ function ContactList() {
 
   const contacts = useSelector(getVisibleContacts.getVisibleContacts);
   useEffect(() => {
-    dispatch(contactsOperations.fetchContacts())
-  },[dispatch])
+    dispatch(contactsOperations.fetchContacts());
+  }, [dispatch]);
   return (
     <ContainerItems>
       {contacts.map(({ id, name, number }) => (
