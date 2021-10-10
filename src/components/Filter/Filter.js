@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { Input, LabelInput } from '../ContactForm/ContactForm.styled';
-import contactsActions from '../../redux/contacts-actions';
+import {contactsActions} from '../../redux/contacts';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 

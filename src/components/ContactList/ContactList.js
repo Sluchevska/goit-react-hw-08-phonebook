@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
-import contactsActions from "../../redux/contacts-actions";
-import { getVisibleContacts } from "../../redux/contacts-selectors";
+import {contactsActions, getVisibleContacts} from "../../redux/contacts";
+
 
 import {
   Span,
@@ -12,7 +12,7 @@ import {
 function ContactList() {
   const dispatch = useDispatch();
 
-  const contacts = useSelector(getVisibleContacts);
+  const contacts = useSelector(getVisibleContacts.getVisibleContacts);
   return (
     <ContainerItems>
       {contacts.map(({ id, name, number }) => (
