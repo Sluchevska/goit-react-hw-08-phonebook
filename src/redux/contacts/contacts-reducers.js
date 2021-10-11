@@ -17,7 +17,7 @@ const isLoading = createReducer(false, {
 })
 
 const error = createReducer(null, {
-  [fetchContacts.rejected]: (_, action) => action.payload,
+  [fetchContacts.rejected]: (_state, action) => action.payload,
   [fetchContacts.pending]: null
 })
 
