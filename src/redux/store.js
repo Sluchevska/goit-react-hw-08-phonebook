@@ -11,15 +11,11 @@ import {
   REGISTER,
 } from 'redux-persist';
 
- 
- 
-
 export const store = configureStore({
   reducer: {
     contacts: contactReducer,
   },
  
-
   devTools: process.env.NODE_ENV !== "production",
    middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
