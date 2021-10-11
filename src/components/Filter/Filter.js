@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
 import { Input, LabelInput } from '../ContactForm/ContactForm.styled';
-import {contactsOperations, contactsSelectors} from 'redux/contacts';
+import {contactsSelectors, contactsActions} from 'redux/contacts';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
+
 
 export default function Filter() {
   const value = useSelector(contactsSelectors.getFilter);
@@ -13,9 +14,9 @@ export default function Filter() {
       <Input
         type="text"
         value={value}
-        onChange={e => dispatch(contactsOperations.changeFilter(e.target.value))}
+        onChange={e => dispatch(contactsActions.changeFilter(e.target.value))}
         onBlur={e =>
-          dispatch(contactsOperations.changeFilter((e.target.value = '')))
+          dispatch(contactsActions.changeFilter((e.target.value = '')))
         }
       />
     </label>
