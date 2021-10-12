@@ -1,11 +1,6 @@
 {
   "contacts": [
     {
-      "id": 1,
-      "name": "Hermione Kline",
-      "number": "443-89-12"
-    },
-    {
       "id": 2,
       "name": "Rosie Simpson",
       "number": "459-12-56"
@@ -21,5 +16,4 @@
       "number": "227-91-26"
     }
   ]
-  
 }
