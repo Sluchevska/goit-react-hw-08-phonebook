@@ -17,16 +17,16 @@ const styles = {
 const Navigation = () => (
   <nav>
     <NavLink to="/" exact style={styles.link} activeStyle={styles.activeLink}>
-      Главная
+      Home
     </NavLink>
 
     <NavLink
-      to="/todos"
+      to="/contacts"
       exact
       style={styles.link}
       activeStyle={styles.activeLink}
     >
-      Заметки
+     Notes
     </NavLink>
   </nav>
 );

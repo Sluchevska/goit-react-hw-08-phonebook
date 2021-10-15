@@ -6,7 +6,7 @@ const HomeView = () => (
   <Container >
     <Title >
       Welcom to your Personal Phone Book{' '}
-      <span role="img" aria-label="Иконка приветствия">
+      <span role="img" aria-label="Welcome icon">
         💁‍♀️
       </span>
     </Title>
