@@ -18,7 +18,7 @@ export default function App() {
         <Route exact path="/" component={HomeView} />
         <Route exact path="/register" component={RegisterView} />
         <Route exact path="/login" component={LoginView} />
-        <Route exact path="/contacts" component={ContactsView} />
+        {/* <Route exact path="/contacts" component={ContactsView} /> */}
         
       </Switch>
       {/* <TitleH1>Phonebook</TitleH1>
