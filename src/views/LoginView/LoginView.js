@@ -1,17 +1,9 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from '../../redux/auth';
+import { Form, Label } from './LoginView.styled';
 
-const styles = {
-  form: {
-    width: 320,
-  },
-  label: {
-    display: 'flex',
-    flexDirection: 'column',
-    marginBottom: 15,
-  },
-};
+
 
 export default function LoginView() {
   const dispatch = useDispatch();
@@ -40,8 +32,8 @@ export default function LoginView() {
     <div>
       <h1>Sign In</h1>
 
-      <form onSubmit={handleSubmit} style={styles.form} autoComplete="off">
-        <label style={styles.label}>
+      <Form onSubmit={handleSubmit}  autoComplete="off">
+        <Label >
          E-mail
           <input
             type="email"
@@ -49,9 +41,9 @@ export default function LoginView() {
             value={email}
             onChange={handleChange}
           />
-        </label>
+        </Label>
 
-        <label style={styles.label}>
+        <Label >
           Password
           <input
             type="password"
@@ -59,10 +51,10 @@ export default function LoginView() {
             value={password}
             onChange={handleChange}
           />
-        </label>
+        </Label>
 
         <button type="submit">Sign In</button>
-      </form>
+      </Form>
     </div>
   );
 }
