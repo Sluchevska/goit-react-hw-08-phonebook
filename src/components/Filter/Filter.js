@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 import { Input, LabelInput } from '../ContactForm/ContactForm.styled';
-import { contactsSelectors, contactsActions } from 'redux/contacts';
+import contactsActions from '../../redux/contacts-actions';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 
 export default function Filter() {
-  const value = useSelector(contactsSelectors.getFilter);
+  const value = useSelector(state => state.contacts.filter);
   const dispatch = useDispatch();
   return (
     <label>

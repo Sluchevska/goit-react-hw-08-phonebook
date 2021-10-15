@@ -1,6 +1,6 @@
-import ContactForm from 'components/ContactForm/ContactForm';
-import ContactList from 'components/ContactList/ContactList';
-import Filter from 'components/Filter/Filter';
+import ContactForm from '../ContactForm/ContactForm';
+import ContactList from '../ContactList/ContactList';
+import Filter from '../Filter/Filter';
 import { Container, TitleH1, TitleH2 } from './App.styled';
 
 export default function App() {

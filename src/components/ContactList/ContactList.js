@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getVisibleContacts, contactsOperations } from 'redux/contacts';
+import contactsActions from '../../redux/contacts-actions';
+import { getVisibleContacts } from '../../redux/contacts-selectors';
 
 import {
   Span,
@@ -12,9 +12,7 @@ import {
 function ContactList() {
   const dispatch = useDispatch();
 
-  const contacts = useSelector(getVisibleContacts.getVisibleContacts);
-  useEffect(() => dispatch(contactsOperations.fetchContacts()), [dispatch]);
-
+  const contacts = useSelector(getVisibleContacts);
   return (
     <ContainerItems>
       {contacts.map(({ id, name, number }) => (
@@ -23,7 +21,7 @@ function ContactList() {
           <Span>{number} </Span>
           <Button
             type="button"
-            onClick={() => dispatch(contactsOperations.deleteContact(id))}
+            onClick={() => dispatch(contactsActions.deleteContact(id))}
           >
             Delete contact
           </Button>

@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
 
 export const Container = styled.div`
-   margin: 20px;
+  margin: 20px;
+
   background: linear-gradient(45deg, rgb(240, 160, 199), rgb(110,10,172));
   padding: 10px;
   width: 700px;
