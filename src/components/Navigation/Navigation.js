@@ -1,14 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { NavigationStyle } from '../AuthNav/AuthNav.styled';
 
 const styles = {
-  link: {
-    display: 'inline-block',
-    textDecoration: 'none',
-    padding: 12,
-    fontWeight: 700,
-    color: '#2A363B',
-  },
+ 
   activeLink: {
     color: '#E84A5F',
   },
@@ -16,18 +11,21 @@ const styles = {
 
 const Navigation = () => (
   <nav>
-    <NavLink to="/" exact style={styles.link} activeStyle={styles.activeLink}>
+    <NavigationStyle>
+    <NavLink to="/" exact activeStyle={styles.activeLink}>
       Home
     </NavLink>
-
+      </NavigationStyle>
+<NavigationStyle>
     <NavLink
       to="/contacts"
       exact
-      style={styles.link}
+     
       activeStyle={styles.activeLink}
     >
      Notes
     </NavLink>
+    </NavigationStyle>
   </nav>
 );
 
