@@ -19,7 +19,7 @@ export default function AuthNav() {
       
         activeStyle={styles.activeLink}
       >
-        Sign Up
+        Register
       </NavLink>
       </NavigationStyle>
       <NavigationStyle>
@@ -29,7 +29,7 @@ export default function AuthNav() {
        
         activeStyle={styles.activeLink}
       >
-       Sign In
+      Log in
       </NavLink>
       </NavigationStyle>
     </div>
