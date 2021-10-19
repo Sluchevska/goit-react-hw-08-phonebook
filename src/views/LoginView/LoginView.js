@@ -11,6 +11,7 @@ export default function LoginView() {
   const [password, setPassword] = useState('');
 
   const handleChange = ({ target: { name, value } }) => {
+    console.log(value)
     switch (name) {
       case 'email':
         return setEmail(value);
@@ -24,7 +25,7 @@ export default function LoginView() {
   const handleSubmit = e => {
     e.preventDefault();
     dispatch(authOperations.logIn({ email, password }));
-    setEmail('');
+       setEmail('');
     setPassword('');
   };
 

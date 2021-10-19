@@ -8,33 +8,31 @@ import HomeView from '../../views/HomeView/HomeView';
 import RegisterView from '../../views/RegisterView/RegisterView';
 import ContactsView from '../../views/ContactsView/ContactsView';
 import LoginView from '../../views/LoginView/LoginView';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { authOperations } from 'redux/auth';
+import { authOperations, authSelectors } from 'redux/auth';
 
 
 
 export default function App() {
   const dispatch = useDispatch();
+   const isRefreshingCurrentUser = useSelector(authSelectors.getIsRefreshingCurrentUser);
 
   useEffect(() => {
     dispatch(authOperations.fetchCurrentUser());
   }, [dispatch]);
   return (
+     !isRefreshingCurrentUser && (
     <Container>
       <AppBar />
       <Switch>
         <Route exact path="/" component={HomeView} />
         <Route exact path="/register" component={RegisterView} />
         <Route exact path="/login" component={LoginView} />
-        {/* <Route exact path="/contacts" component={ContactsView} /> */}
+        <Route exact path="/contacts" component={ContactsView} />
         
       </Switch>
-      {/* <TitleH1>Phonebook</TitleH1>
-      <ContactForm />
-      <TitleH2>Contacts</TitleH2>
-      <Filter />
-      <ContactList /> */}
-    </Container>
+     
+    </Container>)
   );
 }
