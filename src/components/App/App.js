@@ -8,9 +8,18 @@ import HomeView from '../../views/HomeView/HomeView';
 import RegisterView from '../../views/RegisterView/RegisterView';
 import ContactsView from '../../views/ContactsView/ContactsView';
 import LoginView from '../../views/LoginView/LoginView';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { authOperations } from 'redux/auth';
+
 
 
 export default function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(authOperations.fetchCurrentUser());
+  }, [dispatch]);
   return (
     <Container>
       <AppBar />

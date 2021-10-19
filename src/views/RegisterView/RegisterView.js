@@ -34,7 +34,7 @@ export default function RegisterView() {
 
   return (
     <div>
-      <h1>Sign Up</h1>
+      <h1>Register</h1>
 
       <Forma onSubmit={handleSubmit}  autoComplete="off">
         <Label>

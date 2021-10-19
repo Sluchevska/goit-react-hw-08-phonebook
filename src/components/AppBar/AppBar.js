@@ -8,11 +8,11 @@ import { Header } from './AppBar.styled';
 
 
 export default function AppBar() {
-//   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
+  const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
   return (
     <Header >
       <Navigation />
-      {authSelectors.getIsLoggedIn ? <UserMenu /> : <AuthNav />}
+      {isLoggedIn ? <UserMenu /> : <AuthNav />}
     </Header>
   );
 }

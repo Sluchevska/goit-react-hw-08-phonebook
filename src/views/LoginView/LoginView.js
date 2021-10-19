@@ -30,7 +30,7 @@ export default function LoginView() {
 
   return (
     <div>
-      <h1>Sign In</h1>
+      <h1>Log in</h1>
 
       <Form onSubmit={handleSubmit}  autoComplete="off">
         <Label >

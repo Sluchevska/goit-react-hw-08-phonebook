@@ -23,14 +23,14 @@ import contactReducer from './contacts-reducers';
 const authPersistConfig = {
   key: 'auth',
   storage,
-  whitelist:['token'],
-}
+  whitelist: ['token'],
+};
 
 export const store = configureStore({
   reducer: {
     // contacts: persistReducer(contactsPersistConfig, contactReducer),
     auth: persistReducer(authPersistConfig, authReducer),
-    contacts:contactReducer,
+    contacts: contactReducer,
   },
   devTools: process.env.NODE_ENV !== 'production',
   middleware: getDefaultMiddleware =>
@@ -42,5 +42,3 @@ export const store = configureStore({
 });
 
 export const persistor = persistStore(store);
-
-
