@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import { Input, LabelInput } from '../ContactForm/ContactForm.styled';
-import contactsActions from '../../redux/contacts-actions';
+import contactsActions from '../../redux/contacts/contacts-actions';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { getFilter } from 'redux/contacts-selectors';
+import { getFilter } from 'redux/contacts/contacts-selectors';
 
 export default function Filter() {
   const value = useSelector(getFilter);

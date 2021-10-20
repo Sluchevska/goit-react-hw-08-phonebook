@@ -1,16 +1,17 @@
 import { createReducer } from '@reduxjs/toolkit';
 import { combineReducers } from 'redux';
 import contactsActions from './contacts-actions';
-import initialContacts from '../data/initialContacts.json';
-import { addContact, deleteContact, fetchContacts } from './contacts/contacts-operations';
+import { addContact, deleteContact, fetchContacts } from './contacts-operations';
 
 const items = createReducer([], {
   [fetchContacts.fulfilled]: (_state, action) => action.payload.data,
+ 
   [addContact.fulfilled]: (state, { payload }) => {
     if (state.find(contact => contact.name.toLowerCase() === payload.data.name.toLowerCase())) {
       alert(`${payload.data.name} is already in contacts`);
       return state;
     }
+     console.log(payload.data)
     return [payload.data, ...state];
   },
   [deleteContact.fulfilled]: (state, { payload }) => state.filter(({ id }) => id !== payload),
