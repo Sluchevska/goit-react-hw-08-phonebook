@@ -51,6 +51,7 @@ export default function ContactForm() {
     } else {
       dispatch(contactsOperations.addContact({name, number} ));
     }
+    
       resetState();
   };
   return (
