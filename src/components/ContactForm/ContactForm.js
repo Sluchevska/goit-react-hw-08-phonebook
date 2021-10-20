@@ -11,8 +11,7 @@ export default function ContactForm() {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
   const contacts = useSelector(contactsSelectors.getContacts)
-   const nameId = uuidv4();
-  const telId = uuidv4();
+ 
 
 
   const handleChange = e => {
@@ -57,23 +56,23 @@ export default function ContactForm() {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <LabelInput htmlFor={nameId}>Name</LabelInput>
+        <LabelInput >Name</LabelInput>
         <Input
           type="text"
           name="name"
           value={name}
-          id={nameId}
+        
           onChange={handleChange}
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
           required
         />
 
-        <LabelInput htmlFor={telId}>Number</LabelInput>
+        <LabelInput>Number</LabelInput>
         <Input
           type="tel"
           name="number"
-          id={telId}
+       
           value={number}
           onChange={handleChange}
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"

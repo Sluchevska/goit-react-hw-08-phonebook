@@ -14,11 +14,7 @@ import storage from 'redux-persist/lib/storage';
 import { authReducer } from './auth';
 import contactReducer from './contacts/contacts-reducers';
 
-// const contactsPersistConfig = {
-//   key: 'contacts',
-//   storage,
-//   blacklist: ['filter'],
-// };
+
 
 const authPersistConfig = {
   key: 'auth',
@@ -28,8 +24,7 @@ const authPersistConfig = {
 
 export const store = configureStore({
   reducer: {
-    // contacts: persistReducer(contactsPersistConfig, contactReducer),
-    auth: persistReducer(authPersistConfig, authReducer),
+       auth: persistReducer(authPersistConfig, authReducer),
     contacts: contactReducer,
   },
   devTools: process.env.NODE_ENV !== 'production',
