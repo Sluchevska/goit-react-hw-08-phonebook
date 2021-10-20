@@ -3,9 +3,10 @@ import { Input, LabelInput } from '../ContactForm/ContactForm.styled';
 import contactsActions from '../../redux/contacts-actions';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
+import { getFilter } from 'redux/contacts-selectors';
 
 export default function Filter() {
-  const value = useSelector(state => state.contacts.filter);
+  const value = useSelector(getFilter);
   const dispatch = useDispatch();
   return (
     <label>
