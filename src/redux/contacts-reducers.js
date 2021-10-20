@@ -2,24 +2,49 @@ import { createReducer } from '@reduxjs/toolkit';
 import { combineReducers } from 'redux';
 import contactsActions from './contacts-actions';
 import initialContacts from '../data/initialContacts.json';
+import { addContact, deleteContact, fetchContacts } from './contacts/contacts-operations';
 
 const items = createReducer([], {
-  [fetchContactsAction.fulfilled]: (_state, action) => action.payload.data,
-  [addContactAction.fulfilled]: (state, { payload }) => {
+  [fetchContacts.fulfilled]: (_state, action) => action.payload.data,
+  [addContact.fulfilled]: (state, { payload }) => {
     if (state.find(contact => contact.name.toLowerCase() === payload.data.name.toLowerCase())) {
       alert(`${payload.data.name} is already in contacts`);
       return state;
     }
     return [payload.data, ...state];
   },
-  [deleteContactAction.fulfilled]: (state, { payload }) => state.filter(({ id }) => id !== payload),
+  [deleteContact.fulfilled]: (state, { payload }) => state.filter(({ id }) => id !== payload),
 });
 
 const filter = createReducer('', {
   [contactsActions.changeFilter]: (_state, { payload }) => payload,
 });
 
+const isLoading = createReducer(false, {
+    [fetchContacts.pending]: () => true,
+    [fetchContacts.fulfilled]: () => false,
+    [fetchContacts.rejected]: () => false,
+    [addContact.pending]: () => true,
+    [addContact.fulfilled]: () => false,
+    [addContact.rejected]: () => false,
+    [deleteContact.pending]: () => true,
+    [deleteContact.fulfilled]: () => false,
+    [deleteContact.rejected]: () => false,
+
+})
+
+const error = createReducer(null, {
+    [fetchContacts.pending]: null,
+    [fetchContacts.rejected]: (_state, action) => action.payload,
+    [addContact.pending]: null,
+    [addContact.rejected]: (_state, action) => action.payload,
+    [deleteContact.pending]: null,
+    [deleteContact.rejected]: (_state,action) => action.payload,
+})
+
 export default combineReducers({
   items,
-  filter,
+    filter,
+    isLoading,
+  error
 });

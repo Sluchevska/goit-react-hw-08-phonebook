@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-export const fetchContactsAction = createAsyncThunk(
+export const fetchContacts = createAsyncThunk(
   'contacts/fetchContacts',
   async () => {
     try {
@@ -10,14 +10,14 @@ export const fetchContactsAction = createAsyncThunk(
   },
 );
 
-export const addContactAction = createAsyncThunk(
+export const addContact = createAsyncThunk(
   'contacts/addContacts',
   async contact => {
     return await axios.post('/contacts', contact);
   },
 );
 
-export const deleteContactAction = createAsyncThunk(
+export const deleteContact = createAsyncThunk(
   'contacts/deleteContacts',
   async id => {
     await axios.delete(`/contacts/${id}`);
