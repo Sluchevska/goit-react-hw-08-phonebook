@@ -23,7 +23,7 @@ const Navigation = () => (
      
       activeStyle={styles.activeLink}
     >
-     Notes
+     Contacts
     </NavLink>
     </NavigationStyle>
   </nav>
