@@ -44,13 +44,14 @@ export default function ContactForm() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    if (checkName(name)) {
-      alert(`${name} is already in your contacts!`);
-    } else if (checkNumber(number)) {
-      alert(`${number} is already in your contacts!`);
-    } else {
-      dispatch(contactsOperations.addContact({name, number} ));
-    }
+    // if (checkName(name)) {
+    //   alert(`${name} is already in your contacts!`);
+    // } else if (checkNumber(number)) {
+    //   alert(`${number} is already in your contacts!`);
+    // } else {
+    //   dispatch(contactsOperations.addContact({name, number} ));
+    // }
+     dispatch(contactsOperations.addContact({name, number} ));
     
       resetState();
   };
