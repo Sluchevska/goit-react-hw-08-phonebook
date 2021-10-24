@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from '../../redux/auth';
+import { toast } from 'react-toastify';
 import { Form, Label } from './LoginView.styled';
-
-
 
 export default function LoginView() {
   const dispatch = useDispatch();
@@ -11,7 +10,6 @@ export default function LoginView() {
   const [password, setPassword] = useState('');
 
   const handleChange = ({ target: { name, value } }) => {
-    console.log(value)
     switch (name) {
       case 'email':
         return setEmail(value);
@@ -24,8 +22,11 @@ export default function LoginView() {
 
   const handleSubmit = e => {
     e.preventDefault();
+     if (!email.trim() || !password.trim()) {
+      return toast.error('Not all fields are filled in!');
+    }
     dispatch(authOperations.logIn({ email, password }));
-       setEmail('');
+    setEmail('');
     setPassword('');
   };
 
@@ -33,9 +34,9 @@ export default function LoginView() {
     <div>
       <h1>Log in</h1>
 
-      <Form onSubmit={handleSubmit}  autoComplete="off">
-        <Label >
-         E-mail
+      <Form onSubmit={handleSubmit} autoComplete="off">
+        <Label>
+          E-mail
           <input
             type="email"
             name="email"
@@ -44,7 +45,7 @@ export default function LoginView() {
           />
         </Label>
 
-        <Label >
+        <Label>
           Password
           <input
             type="password"
