@@ -25,7 +25,8 @@ export default function LoginView() {
     if (!email.trim() || !password.trim()) {
       return toast.error('Not all fields are filled in!');
     }
-    else if (password.length < 7) {
+    
+    else if ( password.length < 7) {
       return toast.info(
         'Password is too short -shoud be 7 characters minimum',
       );
