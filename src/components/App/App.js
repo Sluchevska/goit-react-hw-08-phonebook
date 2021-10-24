@@ -5,6 +5,8 @@ import { Route, Switch } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { lazy, Suspense, useEffect } from 'react';
 import { authOperations, authSelectors } from 'redux/auth';
+import PublicRoute from 'components/PublicRouter';
+import PrivateRoute from 'components/PrivateRoute';
 
 const HomeView = lazy(()=> import('../../views/HomeView/HomeView.js'))
 const RegisterView = lazy(() => import('../../views/RegisterView/RegisterView'))
