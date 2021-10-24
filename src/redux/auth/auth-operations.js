@@ -38,9 +38,18 @@ const logIn = createAsyncThunk('auth/login', async (credentials,{ rejectWithValu
   try {
     const { data } = await axios.post('/users/login', credentials);
     token.set(data.token);
+     toast.success(
+    `Welcome, ${data.user.name}!`,
+  );
     return data;
   } catch (error) {
-    return rejectWithValue(error.message);
+    const {
+        response: { status, statusText },
+    } = error;
+    if (error = 400) {
+    toast.warn('Wrong login or password. Please, try again:)');
+    }
+    return rejectWithValue({ status, statusText });
   }
 });
 
@@ -48,7 +57,14 @@ const logOut = createAsyncThunk('auth/logout', async (_state,{ rejectWithValue }
   try {
     await axios.post('/users/logout');
     token.unset();
-  } catch (error) { return rejectWithValue(error.data);
+  } catch (error) {
+    const {
+        response: { status, statusText },
+    } = error;
+    if (error = 500) {
+    toast.warn('Logout error, please try again');
+    }
+    return rejectWithValue({ status, statusText });
   }
 });
 
@@ -67,7 +83,13 @@ const fetchCurrentUser = createAsyncThunk(
       const { data } = await axios.get('/users/current');
       return data;
     } catch (error) {
-     return thunkAPI.rejectWithValue(error.data);
+      const {
+        response: { status, statusText },
+      } = error;
+      if (error = 500) {
+    toast.warn('Server error. Try again');
+    }
+     return thunkAPI.rejectWithValue({ status, statusText });
     }
   },
 );
