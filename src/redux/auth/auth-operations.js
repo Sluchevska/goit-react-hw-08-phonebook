@@ -1,3 +1,5 @@
+/* eslint-disable no-ex-assign */
+
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -27,7 +29,6 @@ const register = createAsyncThunk(
         response: { status, statusText },
       } = error;
 
-      // eslint-disable-next-line no-ex-assign
       if ((error = 400)) {
         toast.warn('An account with the specified mail already exists.!');
       }
@@ -49,6 +50,7 @@ const logIn = createAsyncThunk(
       const {
         response: { status, statusText },
       } = error;
+
       if ((error = 400)) {
         toast.warn('Wrong login or password. Please, try again:)');
       }
@@ -67,6 +69,7 @@ const logOut = createAsyncThunk(
       const {
         response: { status, statusText },
       } = error;
+
       if ((error = 500)) {
         toast.warn('Logout error, please try again');
       }
