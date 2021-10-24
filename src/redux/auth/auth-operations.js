@@ -12,61 +12,68 @@ const token = {
   },
 };
 
-const register = createAsyncThunk('auth/register', async (credentials,{ rejectWithValue }) => {
-  try {
-    const { data } = await axios.post('/users/signup', credentials);
-    token.set(data.token);
-    toast.success( `The user has been successfully created. Welcome, ${data.user.name}!`);
-    return data;
-  } catch (error) {
-     
-    const {
+const register = createAsyncThunk(
+  'auth/register',
+  async (credentials, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.post('/users/signup', credentials);
+      token.set(data.token);
+      toast.success(
+        `The user has been successfully created. Welcome, ${data.user.name}!`,
+      );
+      return data;
+    } catch (error) {
+      const {
         response: { status, statusText },
-    } = error;
-   
+      } = error;
+
       // eslint-disable-next-line no-ex-assign
-      if (error = 400) {
-    toast.warn('An account with the specified mail already exists.!');
-    }
-    
-  
-    return rejectWithValue({status, statusText});
-  }
-});
+      if ((error = 400)) {
+        toast.warn('An account with the specified mail already exists.!');
+      }
 
-const logIn = createAsyncThunk('auth/login', async (credentials,{ rejectWithValue }) => {
-  try {
-    const { data } = await axios.post('/users/login', credentials);
-    token.set(data.token);
-     toast.success(
-    `Welcome, ${data.user.name}!`,
-  );
-    return data;
-  } catch (error) {
-    const {
-        response: { status, statusText },
-    } = error;
-    if (error = 400) {
-    toast.warn('Wrong login or password. Please, try again:)');
+      return rejectWithValue({ status, statusText });
     }
-    return rejectWithValue({ status, statusText });
-  }
-});
+  },
+);
 
-const logOut = createAsyncThunk('auth/logout', async (_state,{ rejectWithValue }) => {
-  try {
-    await axios.post('/users/logout');
-    token.unset();
-  } catch (error) {
-    const {
+const logIn = createAsyncThunk(
+  'auth/login',
+  async (credentials, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.post('/users/login', credentials);
+      token.set(data.token);
+      toast.success(`Welcome, ${data.user.name}!`);
+      return data;
+    } catch (error) {
+      const {
         response: { status, statusText },
-    } = error;
-    if (error = 500) {
-    toast.warn('Logout error, please try again');
+      } = error;
+      if ((error = 400)) {
+        toast.warn('Wrong login or password. Please, try again:)');
+      }
+      return rejectWithValue({ status, statusText });
     }
-    return rejectWithValue({ status, statusText });
-  }
-});
+  },
+);
+
+const logOut = createAsyncThunk(
+  'auth/logout',
+  async (_state, { rejectWithValue }) => {
+    try {
+      await axios.post('/users/logout');
+      token.unset();
+    } catch (error) {
+      const {
+        response: { status, statusText },
+      } = error;
+      if ((error = 500)) {
+        toast.warn('Logout error, please try again');
+      }
+      return rejectWithValue({ status, statusText });
+    }
+  },
+);
 
 const fetchCurrentUser = createAsyncThunk(
   'auth/refresh',
@@ -86,10 +93,10 @@ const fetchCurrentUser = createAsyncThunk(
       const {
         response: { status, statusText },
       } = error;
-      if (error = 500) {
-    toast.warn('Server error. Try again');
-    }
-     return thunkAPI.rejectWithValue({ status, statusText });
+      if ((error = 500)) {
+        toast.warn('Server error. Try again');
+      }
+      return thunkAPI.rejectWithValue({ status, statusText });
     }
   },
 );
