@@ -10,32 +10,31 @@ const token = {
   },
 };
 
-const register = createAsyncThunk('auth/register', async credentials => {
+const register = createAsyncThunk('auth/register', async (credentials,{ rejectWithValue }) => {
   try {
     const { data } = await axios.post('/users/signup', credentials);
     token.set(data.token);
     return data;
   } catch (error) {
-    // return rejectWithValue(error.message);
+    return rejectWithValue(error.data);
   }
 });
 
-const logIn = createAsyncThunk('auth/login', async credentials => {
+const logIn = createAsyncThunk('auth/login', async (credentials,{ rejectWithValue }) => {
   try {
     const { data } = await axios.post('/users/login', credentials);
     token.set(data.token);
     return data;
   } catch (error) {
-    // TODO: Добавить обработку ошибки error.message
+    return rejectWithValue(error.message);
   }
 });
 
-const logOut = createAsyncThunk('auth/logout', async () => {
+const logOut = createAsyncThunk('auth/logout', async (_state,{ rejectWithValue }) => {
   try {
     await axios.post('/users/logout');
     token.unset();
-  } catch (error) {
-    // TODO: Добавить обработку ошибки error.message
+  } catch (error) { return rejectWithValue(error.data);
   }
 });
 
@@ -54,7 +53,7 @@ const fetchCurrentUser = createAsyncThunk(
       const { data } = await axios.get('/users/current');
       return data;
     } catch (error) {
-      // TODO: Добавить обработку ошибки error.message
+     return thunkAPI.rejectWithValue(error.data);
     }
   },
 );

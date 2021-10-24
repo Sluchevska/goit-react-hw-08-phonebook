@@ -22,8 +22,13 @@ export default function LoginView() {
 
   const handleSubmit = e => {
     e.preventDefault();
-     if (!email.trim() || !password.trim()) {
+    if (!email.trim() || !password.trim()) {
       return toast.error('Not all fields are filled in!');
+    }
+    else if (password.length < 7) {
+      return toast.info(
+        'Password is too short -shoud be 7 characters minimum',
+      );
     }
     dispatch(authOperations.logIn({ email, password }));
     setEmail('');

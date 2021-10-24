@@ -1,8 +1,10 @@
 import { Container } from './App.styled';
 import AppBar from '../AppBar/AppBar';
-import { Route, Switch } from 'react-router';
+import { Switch } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { lazy, Suspense, useEffect } from 'react';
+import { ToastContainer } from 'react-toastify';
+ import 'react-toastify/dist/ReactToastify.css';
 import { authOperations, authSelectors } from 'redux/auth';
 import PublicRoute from 'components/PublicRouter';
 import PrivateRoute from 'components/PrivateRoute';
@@ -46,6 +48,7 @@ export default function App() {
             </PrivateRoute>
           </Suspense>
         </Switch>
+         <ToastContainer autoClose={3500} />
       </Container>
     )
   );

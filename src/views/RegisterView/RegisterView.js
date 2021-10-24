@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-
+import { toast } from 'react-toastify';
 import { authOperations } from '../../redux/auth';
 import { Forma, Label } from './RegisterView.styled';
 
@@ -25,6 +25,13 @@ export default function RegisterView() {
 
   const handleSubmit = e => {
     e.preventDefault();
+    if (!name.trim() || !email.trim() || !password.trim()) {
+      return toast.error('Please fill out all required fields!');
+    } else if (password.length < 7) {
+      return toast.info(
+        'The password should be least at 7 characters long',
+      );
+    }
     dispatch(authOperations.register({ name, email, password }));
     setName('');
     setEmail('');
