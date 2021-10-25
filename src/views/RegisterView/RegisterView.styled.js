@@ -39,6 +39,7 @@ padding: 10px 20px;
 
 &:hover{
 background-color: #100de0;
+transform: scale(1.1);
 }
 `
 

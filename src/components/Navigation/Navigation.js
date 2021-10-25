@@ -34,8 +34,10 @@ const Navigation = () => {
       style={styles.link}
             activeStyle={styles.activeLink}
           >
-            <BsFillPeopleFill/>
+            <BsFillPeopleFill />
+            <Span>
             Contacts
+            </Span>
           </NavLink>
         )}
       </NavigationStyle>

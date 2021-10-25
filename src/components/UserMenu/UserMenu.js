@@ -1,7 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { authSelectors, authOperations } from '../../redux/auth';
-import { Container, NameStyle } from './UserMenu.styled';
+import { Button, Container, NameStyle } from './UserMenu.styled';
 import { BsFillArrowLeftSquareFill } from "react-icons/bs";
+import { Span } from 'components/AuthNav/AuthNav.styled';
 
 export default function UserMenu() {
   const dispatch = useDispatch();
@@ -10,10 +11,12 @@ export default function UserMenu() {
   return (
     <Container>
       <NameStyle>Welcome, {name}</NameStyle>
-      <button type="button" onClick={() => dispatch(authOperations.logOut())}>
-        <BsFillArrowLeftSquareFill/>
+      <Button type="button" onClick={() => dispatch(authOperations.logOut())}>
+        <BsFillArrowLeftSquareFill />
+        <Span>
         Sign out
-      </button>
+        </Span>
+      </Button>
     </Container>
   );
 }

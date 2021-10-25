@@ -8,4 +8,5 @@ export const Label = styled.label`
 display: flex;
     flex-direction: column;
     margin-bottom: 15px;
+    align-items: flex-start;
 `

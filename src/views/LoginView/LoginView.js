@@ -5,6 +5,8 @@ import { authOperations } from '../../redux/auth';
 import { toast } from 'react-toastify';
 import { Form, Label } from './LoginView.styled';
 import {BsFillKeyFill } from "react-icons/bs";
+import { Button, Container, Title } from 'views/RegisterView/RegisterView.styled';
+import { Span } from 'components/AuthNav/AuthNav.styled';
 
 export default function LoginView() {
   const dispatch = useDispatch();
@@ -35,8 +37,8 @@ export default function LoginView() {
   };
 
   return (
-    <div>
-      <h1>Log in</h1>
+    <Container>
+      <Title>Log in</Title>
 
       <Form onSubmit={handleSubmit} autoComplete="off">
         <div className="form-group">
@@ -69,10 +71,12 @@ export default function LoginView() {
           />
         </div>
    
-        <button type="submit" className="btn btn-primary">
-          <BsFillKeyFill/>
-          Sign In</button>
+        <Button type="submit" className="btn btn-primary">
+          <BsFillKeyFill />
+          <Span>
+          Sign In
+          </Span></Button>
       </Form>
-    </div>
+    </Container>
   );
 }
