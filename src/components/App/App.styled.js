@@ -9,6 +9,7 @@ export const Container = styled.div`
   // box-shadow: 5px 6px 9px rgb(58,6,90);
   border-radius: 5px;
   text-align: center;
+  
 `;
 export const TitleH1 = styled.h1`
   font-style: italic;

@@ -1,12 +1,14 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { NavigationStyle } from './AuthNav.styled';
+import { NavigationStyle, Span } from './AuthNav.styled';
 import { BsFillArrowRightSquareFill,BsFillPersonPlusFill } from "react-icons/bs";
 
 const styles = {
-  
+  link: {
+    color:'#383764',
+  },
   activeLink: {
-    color: 'rgb(4 21 51)',
+    color: '#100de0',
   },
 };
 
@@ -17,22 +19,27 @@ export default function AuthNav() {
       <NavLink
         to="/register"
         exact
-      
+      style={styles.link}
         activeStyle={styles.activeLink}
         >
-        <BsFillPersonPlusFill/>
-        Register
+        <BsFillPersonPlusFill />
+          <Span>
+             
+            Register</Span>
+        
       </NavLink>
       </NavigationStyle>
       <NavigationStyle>
       <NavLink
         to="/login"
         exact
-       
+       style={styles.link}
         activeStyle={styles.activeLink}
         >
-          <BsFillArrowRightSquareFill/>
+          <BsFillArrowRightSquareFill />
+          <Span>
       Log in
+      </Span>
       </NavLink>
       </NavigationStyle>
     </div>

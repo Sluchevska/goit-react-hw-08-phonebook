@@ -2,13 +2,15 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { authSelectors } from 'redux/auth';
-import { NavigationStyle } from '../AuthNav/AuthNav.styled';
+import { NavigationStyle, Span } from '../AuthNav/AuthNav.styled';
 import { BsFillPeopleFill, BsFillHouseDoorFill} from "react-icons/bs";
 
 const styles = {
- 
+  link: {
+    color:'#383764',
+  },
   activeLink: {
-    color: '#E84A5F',
+    color: '#100de0',
   },
 };
 
@@ -17,9 +19,11 @@ const Navigation = () => {
   return (
     <nav>
       <NavigationStyle>
-        <NavLink to="/" exact activeStyle={styles.activeLink}>
-          <BsFillHouseDoorFill/>
+        <NavLink to="/" exact activeStyle={styles.activeLink}  style={styles.link}>
+          <BsFillHouseDoorFill />
+          <Span>
           Home
+          </Span>
         </NavLink>
       </NavigationStyle>
       <NavigationStyle>
@@ -27,7 +31,7 @@ const Navigation = () => {
           <NavLink
             to="/contacts"
             exact
-     
+      style={styles.link}
             activeStyle={styles.activeLink}
           >
             <BsFillPeopleFill/>
