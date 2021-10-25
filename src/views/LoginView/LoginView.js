@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-duplicate-props */
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from '../../redux/auth';
@@ -37,27 +38,38 @@ export default function LoginView() {
       <h1>Log in</h1>
 
       <Form onSubmit={handleSubmit} autoComplete="off">
-        <Label>
-          E-mail
+        <div className="mb-3">
+          <Label htmlFor="exampleInputEmail1" className="form-label">
+            E-mail{' '}
+          </Label>
           <input
             type="email"
             name="email"
             value={email}
             onChange={handleChange}
+            className="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
           />
-        </Label>
+          <div id="emailHelp" className="form-text">
+            We'll never share your email with anyone else.
+          </div>
+        </div>
 
-        <Label>
-          Password
+        <div className="mb-3">
+          <Label htmlFor="exampleInputPassword1" className="form-label">
+            Password{' '}
+          </Label>
           <input
             type="password"
             name="password"
             value={password}
             onChange={handleChange}
+            className="form-control"
+            id="exampleInputPassword1"
           />
-        </Label>
-
-        <button type="submit">Sign In</button>
+        </div>
+        <button type="submit" className="btn btn-primary">Sign In</button>
       </Form>
     </div>
   );
