@@ -71,7 +71,7 @@ const logOut = createAsyncThunk(
         response: { status, statusText },
       } = error;
 
-      if (error = 500) {
+      if ((error = 500)) {
         toast.warn('Logout error, please try again');
       }
       return rejectWithValue({ status, statusText });

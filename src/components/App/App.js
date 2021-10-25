@@ -4,7 +4,7 @@ import { Switch } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { lazy, Suspense, useEffect } from 'react';
 import { ToastContainer } from 'react-toastify';
- import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
 import { authOperations, authSelectors } from 'redux/auth';
 import PublicRoute from 'components/PublicRouter';
 import PrivateRoute from 'components/PrivateRoute';
@@ -37,7 +37,12 @@ export default function App() {
             <PublicRoute exact path="/">
               <HomeView />
             </PublicRoute>
-            <PublicRoute exact path="/register" redirectTo="/contacts" restricted>
+            <PublicRoute
+              exact
+              path="/register"
+              redirectTo="/contacts"
+              restricted
+            >
               <RegisterView />
             </PublicRoute>
             <PublicRoute exact path="/login" redirectTo="/contacts" restricted>
@@ -48,7 +53,7 @@ export default function App() {
             </PrivateRoute>
           </Suspense>
         </Switch>
-         <ToastContainer autoClose={2500} />
+        <ToastContainer autoClose={2500} />
       </Container>
     )
   );

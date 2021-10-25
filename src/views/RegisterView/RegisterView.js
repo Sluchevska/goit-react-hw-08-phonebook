@@ -2,7 +2,14 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 import { authOperations } from '../../redux/auth';
-import { Container, Forma, Label, Title, NoticeText, Button } from './RegisterView.styled';
+import {
+  Container,
+  Forma,
+  Label,
+  Title,
+  NoticeText,
+  Button,
+} from './RegisterView.styled';
 import { BsPersonCheckFill } from 'react-icons/bs';
 import { Span } from 'components/AuthNav/AuthNav.styled';
 
@@ -45,7 +52,6 @@ export default function RegisterView() {
       <Forma onSubmit={handleSubmit} autoComplete="off">
         <div className="form-group">
           <Label className="form-label">
-            
             Name
             <input
               type="text"
@@ -88,15 +94,14 @@ export default function RegisterView() {
             id="exampleInputPassword1"
           />
           <NoticeText>
-            Your password must be 8-20 characters long and must not contain spaces, special characters, or emoji.
+            Your password must be 8-20 characters long and must not contain
+            spaces, special characters, or emoji.
           </NoticeText>
         </div>
 
         <Button type="submit" className="btn btn-primary">
           <BsPersonCheckFill />
-          <Span>
-          Sign Up
-          </Span>
+          <Span>Sign Up</Span>
         </Button>
       </Forma>
     </Container>

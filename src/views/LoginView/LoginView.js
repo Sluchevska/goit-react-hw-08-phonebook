@@ -4,8 +4,12 @@ import { useDispatch } from 'react-redux';
 import { authOperations } from '../../redux/auth';
 import { toast } from 'react-toastify';
 import { Form, Label } from './LoginView.styled';
-import {BsFillKeyFill } from "react-icons/bs";
-import { Button, Container, Title } from 'views/RegisterView/RegisterView.styled';
+import { BsFillKeyFill } from 'react-icons/bs';
+import {
+  Button,
+  Container,
+  Title,
+} from 'views/RegisterView/RegisterView.styled';
 import { Span } from 'components/AuthNav/AuthNav.styled';
 
 export default function LoginView() {
@@ -54,7 +58,6 @@ export default function LoginView() {
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
           />
-         
         </div>
 
         <div className="form-group">
@@ -70,12 +73,11 @@ export default function LoginView() {
             id="exampleInputPassword1"
           />
         </div>
-   
+
         <Button type="submit" className="btn btn-primary">
           <BsFillKeyFill />
-          <Span>
-          Sign In
-          </Span></Button>
+          <Span>Sign In</Span>
+        </Button>
       </Form>
     </Container>
   );
