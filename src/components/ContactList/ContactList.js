@@ -5,12 +5,13 @@ import { getVisibleContacts } from '../../redux/contacts/contacts-selectors';
 import { BsFillPersonXFill } from "react-icons/bs";
 
 import {
-  Span,
-  Button,
+   Button,
   ContactItems,
   ContainerItems,
-  Container
+  Container,
+  SpanHolder
 } from './ContactList.styled';
+import { Span } from 'components/AuthNav/AuthNav.styled';
 
 function ContactList() {
   const dispatch = useDispatch();
@@ -28,14 +29,16 @@ function ContactList() {
       {contacts.map(({ id, name, number }) => (
         
         <ContactItems key={id}>
-          <Span>{name}: </Span>
-          <Span>{number} </Span>
+          <SpanHolder>{name}: </SpanHolder>
+          <SpanHolder>{number} </SpanHolder>
           <Button
             type="button"
             onClick={() => dispatch(contactsOperations.deleteContact(id))}
           >
-            <BsFillPersonXFill/>
+            <BsFillPersonXFill />
+            <Span>
             Delete contact
+            </Span>
           </Button>
         </ContactItems>
       ))}

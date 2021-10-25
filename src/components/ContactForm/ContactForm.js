@@ -6,6 +6,7 @@ import { LabelInput, Input, Button, Container } from './ContactForm.styled';
 import { contactsOperations, contactsSelectors } from 'redux/contacts';
 import { useSelector } from 'react-redux';
 import { BsFillPersonPlusFill } from "react-icons/bs";
+import { Span } from 'components/AuthNav/AuthNav.styled';
 
 export default function ContactForm() {
   const dispatch = useDispatch();
@@ -84,8 +85,9 @@ export default function ContactForm() {
         />
 
         <Button type="submit">
-          <BsFillPersonPlusFill/>
-          Add contact</Button>
+          <BsFillPersonPlusFill />
+          <Span>
+          Add contact</Span></Button>
       </form>
     </Container>
   );

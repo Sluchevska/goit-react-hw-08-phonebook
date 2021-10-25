@@ -8,10 +8,13 @@ export const Container = styled.div`
   
 `;
 export const TitleH1 = styled.h1`
+ margin-top: 46px;
+ margin-bottom: 28px;
   font-style: italic;
 `;
 
 export const TitleH2 = styled.h2`
   font-style: italic;
   margin-top: 46px;
+   margin-bottom: 28px;
 `;
