@@ -34,7 +34,7 @@ function ContactList() {
               <SpanHolder>{number} </SpanHolder>
               <Button
                 type="button"
-                onClick={() => dispatch(contactsOperations.deleteContact(id))}
+                onClick={() => dispatch(contactsOperations.deleteContact(id)) }
               >
                 <BsFillPersonXFill />
                 <Span>
