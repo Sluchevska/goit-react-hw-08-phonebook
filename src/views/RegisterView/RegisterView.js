@@ -2,8 +2,9 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 import { authOperations } from '../../redux/auth';
-import { Forma, Label } from './RegisterView.styled';
-import { BsPersonCheckFill } from "react-icons/bs";
+import { Container, Forma, Label, Title, NoticeText, Button } from './RegisterView.styled';
+import { BsPersonCheckFill } from 'react-icons/bs';
+import { Span } from 'components/AuthNav/AuthNav.styled';
 
 export default function RegisterView() {
   const dispatch = useDispatch();
@@ -38,23 +39,24 @@ export default function RegisterView() {
   };
 
   return (
-    <div>
-      <h1>Register</h1>
- 
+    <Container>
+      <Title>Register</Title>
+
       <Forma onSubmit={handleSubmit} autoComplete="off">
         <div className="form-group">
-        <Label className="form-label">
-          Name
-          <input
-            type="text"
-            name="name"
-            required
-            value={name}
+          <Label className="form-label">
+            
+            Name
+            <input
+              type="text"
+              name="name"
+              required
+              value={name}
               onChange={handleChange}
               className="form-control"
-          />
-        </Label>
-</div>
+            />
+          </Label>
+        </div>
         <div className="form-group">
           <Label htmlFor="exampleInputEmail1" className="form-label">
             Email address
@@ -68,9 +70,9 @@ export default function RegisterView() {
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
           />
-          <div id="emailHelp" className="form-text">
+          <NoticeText>
             We'll never share your email with anyone else.
-          </div>
+          </NoticeText>
         </div>
 
         <div className="form-group">
@@ -85,18 +87,18 @@ export default function RegisterView() {
             className="form-control"
             id="exampleInputPassword1"
           />
-           <div id="passwordHelpBlock" className="form-text">
-            Your password must be 8-20 characters long, contain letters and
-            numbers, and must not contain spaces, special characters, or emoji.
-          </div>
+          <NoticeText>
+            Your password must be 8-20 characters long and must not contain spaces, special characters, or emoji.
+          </NoticeText>
         </div>
-         
-        
 
-        <button type="submit">
-          <BsPersonCheckFill/>
-          Sign Up</button>
+        <Button type="submit" className="btn btn-primary">
+          <BsPersonCheckFill />
+          <Span>
+          Sign Up
+          </Span>
+        </Button>
       </Forma>
-    </div>
+    </Container>
   );
 }
