@@ -22,3 +22,18 @@ font-size: 14px;
 font-weight:700;
   
 `
+export const Container = styled.div`
+  width: 700px;
+  text-align: center;
+ 
+  display:inline-block;
+// background-image: linear-gradient(
+//          rgba(86, 86, 218, 0.7),
+//       rgba(230, 230, 247, 0.7)
+     
+//     );
+
+//     padding: 15px 5px;
+//     box-shadow: 4px 5px 8px rgb(34, 49, 190);
+//  border-radius: 5px;
+ `

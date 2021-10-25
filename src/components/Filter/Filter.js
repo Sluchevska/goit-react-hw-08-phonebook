@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { Input, LabelInput } from '../ContactForm/ContactForm.styled';
+import { Container, Input, LabelInput } from '../ContactForm/ContactForm.styled';
 import contactsActions from '../../redux/contacts/contacts-actions';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
@@ -10,6 +10,7 @@ export default function Filter() {
   const value = useSelector(getFilter);
   const dispatch = useDispatch();
   return (
+    <Container>
     <label>
       <LabelInput>Find contact by name</LabelInput>
       <Input
@@ -20,7 +21,8 @@ export default function Filter() {
           dispatch(contactsActions.changeFilter((e.target.value = '')))
         }
       />
-    </label>
+      </label>
+      </Container>
   );
 }
 

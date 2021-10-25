@@ -2,13 +2,14 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { contactsOperations } from 'redux/contacts';
 import { getVisibleContacts } from '../../redux/contacts/contacts-selectors';
-import { BsFillPersonXFill} from "react-icons/bs";
+import { BsFillPersonXFill } from "react-icons/bs";
 
 import {
   Span,
   Button,
   ContactItems,
   ContainerItems,
+  Container
 } from './ContactList.styled';
 
 function ContactList() {
@@ -22,8 +23,10 @@ function ContactList() {
 
 
   return (
+    <Container>
     <ContainerItems>
       {contacts.map(({ id, name, number }) => (
+        
         <ContactItems key={id}>
           <Span>{name}: </Span>
           <Span>{number} </Span>
@@ -36,7 +39,8 @@ function ContactList() {
           </Button>
         </ContactItems>
       ))}
-    </ContainerItems>
+      </ContainerItems>
+      </Container>
   );
 }
 

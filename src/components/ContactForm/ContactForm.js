@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import { useDispatch } from 'react-redux';
-import { LabelInput, Input, Button } from './ContactForm.styled';
+import { LabelInput, Input, Button, Container } from './ContactForm.styled';
 
 import { contactsOperations, contactsSelectors } from 'redux/contacts';
 import { useSelector } from 'react-redux';
@@ -57,7 +57,7 @@ export default function ContactForm() {
       resetState();
   };
   return (
-    <div>
+    <Container>
       <form onSubmit={handleSubmit}>
         <LabelInput >Name</LabelInput>
         <Input
@@ -87,6 +87,6 @@ export default function ContactForm() {
           <BsFillPersonPlusFill/>
           Add contact</Button>
       </form>
-    </div>
+    </Container>
   );
 }
