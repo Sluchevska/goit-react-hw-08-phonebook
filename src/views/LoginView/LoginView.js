@@ -39,8 +39,8 @@ export default function LoginView() {
 
       <Form onSubmit={handleSubmit} autoComplete="off">
         <div className="mb-3">
-          <Label htmlFor="exampleInputEmail1" className="form-label">
-            E-mail{' '}
+          <Label htmlFor="exampleInputEmail1" className="form-label ">
+            Email address
           </Label>
           <input
             type="email"
@@ -51,14 +51,12 @@ export default function LoginView() {
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
           />
-          <div id="emailHelp" className="form-text">
-            We'll never share your email with anyone else.
-          </div>
+         
         </div>
 
         <div className="mb-3">
           <Label htmlFor="exampleInputPassword1" className="form-label">
-            Password{' '}
+            Password
           </Label>
           <input
             type="password"
@@ -69,6 +67,7 @@ export default function LoginView() {
             id="exampleInputPassword1"
           />
         </div>
+   
         <button type="submit" className="btn btn-primary">Sign In</button>
       </Form>
     </div>

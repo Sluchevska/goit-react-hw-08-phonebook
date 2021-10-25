@@ -52,27 +52,43 @@ export default function RegisterView() {
           />
         </Label>
 
-        <Label>
-          E-mail
+        <div className="mb-3">
+          <Label htmlFor="exampleInputEmail1" className="form-label">
+            Email address
+          </Label>
           <input
             type="email"
             name="email"
             value={email}
-            required
             onChange={handleChange}
+            className="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
           />
-        </Label>
+          <div id="emailHelp" className="form-text">
+            We'll never share your email with anyone else.
+          </div>
+        </div>
 
-        <Label>
-          Password
+        <div className="mb-3">
+          <Label htmlFor="exampleInputPassword1" className="form-label">
+            Password
+          </Label>
           <input
             type="password"
             name="password"
             value={password}
-            required
             onChange={handleChange}
+            className="form-control"
+            id="exampleInputPassword1"
           />
-        </Label>
+           <div id="passwordHelpBlock" className="form-text">
+            Your password must be 8-20 characters long, contain letters and
+            numbers, and must not contain spaces, special characters, or emoji.
+          </div>
+        </div>
+         
+        
 
         <button type="submit">Sign Up</button>
       </Forma>
