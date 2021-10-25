@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { authSelectors } from 'redux/auth';
 import { NavigationStyle } from '../AuthNav/AuthNav.styled';
+import { BsFillBookFill} from "react-icons/bs";
 
 const styles = {
  
@@ -28,6 +29,7 @@ const Navigation = () => {
      
             activeStyle={styles.activeLink}
           >
+            <BsFillBookFill/>
             Contacts
           </NavLink>
         )}

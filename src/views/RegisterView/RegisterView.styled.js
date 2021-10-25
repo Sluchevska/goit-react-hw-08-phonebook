@@ -7,5 +7,5 @@ export const Forma = styled.form`
 export const Label = styled.label`
 display: flex;
     flex-direction: column;
-    margin-bottom: 15px;
+    // margin-bottom: 15px;
 `

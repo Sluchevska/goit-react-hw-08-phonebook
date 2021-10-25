@@ -39,20 +39,22 @@ export default function RegisterView() {
   return (
     <div>
       <h1>Register</h1>
-
+ 
       <Forma onSubmit={handleSubmit} autoComplete="off">
-        <Label>
+        <div className="form-group">
+        <Label className="form-label">
           Name
           <input
             type="text"
             name="name"
             required
             value={name}
-            onChange={handleChange}
+              onChange={handleChange}
+              className="form-control"
           />
         </Label>
-
-        <div className="mb-3">
+</div>
+        <div className="form-group">
           <Label htmlFor="exampleInputEmail1" className="form-label">
             Email address
           </Label>
@@ -70,7 +72,7 @@ export default function RegisterView() {
           </div>
         </div>
 
-        <div className="mb-3">
+        <div className="form-group">
           <Label htmlFor="exampleInputPassword1" className="form-label">
             Password
           </Label>

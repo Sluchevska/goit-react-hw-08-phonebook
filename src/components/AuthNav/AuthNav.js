@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { NavigationStyle } from './AuthNav.styled';
+import { BsFillArrowRightSquareFill } from "react-icons/bs";
 
 const styles = {
   
@@ -18,7 +19,8 @@ export default function AuthNav() {
         exact
       
         activeStyle={styles.activeLink}
-      >
+        >
+        <BsFillArrowRightSquareFill/>
         Register
       </NavLink>
       </NavigationStyle>

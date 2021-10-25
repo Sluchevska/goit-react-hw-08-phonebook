@@ -38,7 +38,7 @@ export default function LoginView() {
       <h1>Log in</h1>
 
       <Form onSubmit={handleSubmit} autoComplete="off">
-        <div className="mb-3">
+        <div className="form-group">
           <Label htmlFor="exampleInputEmail1" className="form-label ">
             Email address
           </Label>
@@ -54,7 +54,7 @@ export default function LoginView() {
          
         </div>
 
-        <div className="mb-3">
+        <div className="form-group">
           <Label htmlFor="exampleInputPassword1" className="form-label">
             Password
           </Label>
