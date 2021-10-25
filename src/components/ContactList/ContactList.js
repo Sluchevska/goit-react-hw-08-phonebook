@@ -25,24 +25,28 @@ function ContactList() {
 
   return (
     <Container>
-    <ContainerItems>
-      {contacts.map(({ id, name, number }) => (
+      {contacts.length > 0 && !error ? (
+        <ContainerItems>
+          {contacts.map(({ id, name, number }) => (
         
-        <ContactItems key={id}>
-          <SpanHolder>{name}: </SpanHolder>
-          <SpanHolder>{number} </SpanHolder>
-          <Button
-            type="button"
-            onClick={() => dispatch(contactsOperations.deleteContact(id))}
-          >
-            <BsFillPersonXFill />
-            <Span>
-            Delete contact
-            </Span>
-          </Button>
-        </ContactItems>
-      ))}
-      </ContainerItems>
+            <ContactItems key={id}>
+              <SpanHolder>{name}: </SpanHolder>
+              <SpanHolder>{number} </SpanHolder>
+              <Button
+                type="button"
+                onClick={() => dispatch(contactsOperations.deleteContact(id))}
+              >
+                <BsFillPersonXFill />
+                <Span>
+                  Delete contact
+                </Span>
+              </Button>
+            </ContactItems>
+          ))}
+        </ContainerItems>
+      ) : (<p >
+        Currently your phonebook has no contacts. Please add them.
+      </p>)}
       </Container>
   );
 }
