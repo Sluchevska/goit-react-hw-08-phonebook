@@ -48,7 +48,7 @@ export default function App() {
             </PrivateRoute>
           </Suspense>
         </Switch>
-         <ToastContainer autoClose={3500} />
+         <ToastContainer autoClose={2500} />
       </Container>
     )
   );

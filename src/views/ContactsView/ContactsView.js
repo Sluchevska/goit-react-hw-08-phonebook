@@ -1,7 +1,8 @@
 import ContactList from '../../components/ContactList/ContactList';
 import ContactForm from '../../components/ContactForm/ContactForm';
 import Filter from '../../components/Filter/Filter';
-import { TitleH1, Container, TitleH2 } from 'components/App/App.styled';
+import { TitleH1, TitleH2 } from 'components/App/App.styled';
+import { Container } from 'views/RegisterView/RegisterView.styled';
 
 function ContactsView() {
   return (
