@@ -25,7 +25,7 @@ function ContactList() {
 
   return (
     <Container>
-      {contacts.length > 0 && !error ? (
+      {contacts.length > 0  ? (
         <ContainerItems>
           {contacts.map(({ id, name, number }) => (
         
