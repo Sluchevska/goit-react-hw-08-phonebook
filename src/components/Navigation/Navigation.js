@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { authSelectors } from 'redux/auth';
 import { NavigationStyle } from '../AuthNav/AuthNav.styled';
-import { BsFillBookFill} from "react-icons/bs";
+import { BsFillBookFill, BsFillHouseDoorFill} from "react-icons/bs";
 
 const styles = {
  
@@ -18,6 +18,7 @@ const Navigation = () => {
     <nav>
       <NavigationStyle>
         <NavLink to="/" exact activeStyle={styles.activeLink}>
+          <BsFillHouseDoorFill/>
           Home
         </NavLink>
       </NavigationStyle>

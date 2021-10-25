@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 import { authOperations } from '../../redux/auth';
 import { Forma, Label } from './RegisterView.styled';
+import { BsPersonCheckFill } from "react-icons/bs";
 
 export default function RegisterView() {
   const dispatch = useDispatch();
@@ -92,7 +93,9 @@ export default function RegisterView() {
          
         
 
-        <button type="submit">Sign Up</button>
+        <button type="submit">
+          <BsPersonCheckFill/>
+          Sign Up</button>
       </Forma>
     </div>
   );

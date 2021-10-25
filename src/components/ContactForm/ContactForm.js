@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
+
 import { useDispatch } from 'react-redux';
 import { LabelInput, Input, Button } from './ContactForm.styled';
-import contactsActions from '../../redux/contacts/contacts-actions';
+
 import { contactsOperations, contactsSelectors } from 'redux/contacts';
 import { useSelector } from 'react-redux';
+import { BsFillPersonPlusFill } from "react-icons/bs";
 
 export default function ContactForm() {
   const dispatch = useDispatch();
@@ -82,7 +83,9 @@ export default function ContactForm() {
           required
         />
 
-        <Button type="submit">Add contact</Button>
+        <Button type="submit">
+          <BsFillPersonPlusFill/>
+          Add contact</Button>
       </form>
     </div>
   );

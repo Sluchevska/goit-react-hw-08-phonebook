@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { NavigationStyle } from './AuthNav.styled';
-import { BsFillArrowRightSquareFill } from "react-icons/bs";
+import { BsFillArrowRightSquareFill,BsFillPersonPlusFill } from "react-icons/bs";
 
 const styles = {
   
@@ -20,7 +20,7 @@ export default function AuthNav() {
       
         activeStyle={styles.activeLink}
         >
-        <BsFillArrowRightSquareFill/>
+        <BsFillPersonPlusFill/>
         Register
       </NavLink>
       </NavigationStyle>
@@ -30,7 +30,8 @@ export default function AuthNav() {
         exact
        
         activeStyle={styles.activeLink}
-      >
+        >
+          <BsFillArrowRightSquareFill/>
       Log in
       </NavLink>
       </NavigationStyle>

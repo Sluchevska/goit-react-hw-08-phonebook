@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { authOperations } from '../../redux/auth';
 import { toast } from 'react-toastify';
 import { Form, Label } from './LoginView.styled';
+import {BsFillKeyFill } from "react-icons/bs";
 
 export default function LoginView() {
   const dispatch = useDispatch();
@@ -68,7 +69,9 @@ export default function LoginView() {
           />
         </div>
    
-        <button type="submit" className="btn btn-primary">Sign In</button>
+        <button type="submit" className="btn btn-primary">
+          <BsFillKeyFill/>
+          Sign In</button>
       </Form>
     </div>
   );

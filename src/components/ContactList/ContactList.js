@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { contactsOperations } from 'redux/contacts';
 import { getVisibleContacts } from '../../redux/contacts/contacts-selectors';
+import { BsFillPersonXFill} from "react-icons/bs";
 
 import {
   Span,
@@ -30,6 +31,7 @@ function ContactList() {
             type="button"
             onClick={() => dispatch(contactsOperations.deleteContact(id))}
           >
+            <BsFillPersonXFill/>
             Delete contact
           </Button>
         </ContactItems>
