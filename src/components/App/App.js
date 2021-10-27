@@ -6,8 +6,8 @@ import { lazy, Suspense, useEffect } from 'react';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { authOperations, authSelectors } from 'redux/auth';
-import PublicRoute from 'components/PublicRouter';
-import PrivateRoute from 'components/PrivateRoute';
+import PublicRoute from 'components/routs/PublicRouter';
+import PrivateRoute from 'components/routs/PrivateRoute';
 
 const HomeView = lazy(() => import('../../views/HomeView/HomeView.js'));
 const RegisterView = lazy(() =>
