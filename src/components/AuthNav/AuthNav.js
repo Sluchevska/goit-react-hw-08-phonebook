@@ -1,44 +1,25 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { NavigationStyle, Span } from './AuthNav.styled';
+
+import { NavigationLink, NavigationStyle, Span } from './AuthNav.styled';
 import {
   BsFillArrowRightSquareFill,
   BsFillPersonPlusFill,
 } from 'react-icons/bs';
 
-const styles = {
-  link: {
-    color: '#383764',
-  },
-  activeLink: {
-    color: '#100de0',
-  },
-};
-
 export default function AuthNav() {
   return (
     <div>
       <NavigationStyle>
-        <NavLink
-          to="/register"
-          exact
-          style={styles.link}
-          activeStyle={styles.activeLink}
-        >
+        <NavigationLink to="/register" exact>
           <BsFillPersonPlusFill />
           <Span>Register</Span>
-        </NavLink>
+        </NavigationLink>
       </NavigationStyle>
       <NavigationStyle>
-        <NavLink
-          to="/login"
-          exact
-          style={styles.link}
-          activeStyle={styles.activeLink}
-        >
+        <NavigationLink to="/login" exact>
           <BsFillArrowRightSquareFill />
           <Span>Log in</Span>
-        </NavLink>
+        </NavigationLink>
       </NavigationStyle>
     </div>
   );

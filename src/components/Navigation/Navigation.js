@@ -1,18 +1,13 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom';
-import { authSelectors } from 'redux/auth';
-import { NavigationStyle, Span } from '../AuthNav/AuthNav.styled';
-import { BsFillPeopleFill, BsFillHouseDoorFill } from 'react-icons/bs';
 
-const styles = {
-  link: {
-    color: '#383764',
-  },
-  activeLink: {
-    color: '#100de0',
-  },
-};
+import { authSelectors } from 'redux/auth';
+import {
+  NavigationLink,
+  NavigationStyle,
+  Span,
+} from '../AuthNav/AuthNav.styled';
+import { BsFillPeopleFill, BsFillHouseDoorFill } from 'react-icons/bs';
 
 const Navigation = () => {
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
@@ -20,28 +15,18 @@ const Navigation = () => {
     <nav>
       <NavigationStyle>
         {!isLoggedIn && (
-          <NavLink
-            to="/"
-            exact
-            activeStyle={styles.activeLink}
-            style={styles.link}
-          >
+          <NavigationLink to="/" exact>
             <BsFillHouseDoorFill />
             <Span>Home</Span>
-          </NavLink>
+          </NavigationLink>
         )}
       </NavigationStyle>
       <NavigationStyle>
         {isLoggedIn && (
-          <NavLink
-            to="/contacts"
-            exact
-            style={styles.link}
-            activeStyle={styles.activeLink}
-          >
+          <NavigationLink to="/contacts" exact>
             <BsFillPeopleFill />
             <Span>Contacts</Span>
-          </NavLink>
+          </NavigationLink>
         )}
       </NavigationStyle>
     </nav>
